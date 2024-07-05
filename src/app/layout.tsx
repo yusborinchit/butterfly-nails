@@ -16,7 +16,7 @@ interface Props {
 export default function RootLayout({ children }: Readonly<Props>) {
   return (
     <html lang="es" className={`${GeistSans.variable}`}>
-      <body className="text-neutral-900">{children}</body>
+      <body className="text-neutral-950">{children}</body>
     </html>
   );
 }

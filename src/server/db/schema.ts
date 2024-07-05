@@ -1,4 +1,3 @@
-import { sql } from "drizzle-orm";
 import {
   index,
   pgTableCreator,
@@ -9,19 +8,18 @@ import {
 
 export const createTable = pgTableCreator((name) => `butterfly-nails_${name}`);
 
-export const posts = createTable(
-  "post",
+export const booking = createTable(
+  "booking",
   {
     id: serial("id").primaryKey(),
-    name: varchar("name", { length: 256 }),
-    createdAt: timestamp("created_at", { withTimezone: true })
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
-    updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
-      () => new Date(),
-    ),
+    date: timestamp("date").notNull(),
+    time: varchar("time", { length: 5 }).notNull(),
+    service: varchar("service", { length: 64 }).notNull(),
+    state: varchar("state", { length: 64 }).notNull(),
+    name: varchar("name", { length: 256 }).notNull(),
+    ci: varchar("ci", { length: 8 }).notNull(),
   },
   (example) => ({
-    nameIndex: index("name_idx").on(example.name),
+    dateIndex: index("date_idx").on(example.date),
   }),
 );
