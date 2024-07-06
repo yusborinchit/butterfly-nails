@@ -6,7 +6,7 @@ interface Props {
   placeholder: string;
 }
 
-export function TextInput(props: Readonly<Props>) {
+export default function TextInput(props: Readonly<Props>) {
   const id = useId();
 
   return (
