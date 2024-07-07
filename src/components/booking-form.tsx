@@ -80,13 +80,13 @@ export default function BookingForm(props: Readonly<Props>) {
           <option value="Capping">Capping</option>
           <option value="Esmaltado Semi">Esmaltado Semi</option>
         </SelectInput>
-        <div className="mt-auto flex items-center gap-4">
+        <div className="mt-auto flex flex-col gap-4 md:flex-row md:items-center">
           <button
             type="submit"
             name="method"
             value="MercadoPago"
             disabled={!isDateAvailable}
-            className="mt-auto grid h-fit w-fit rounded bg-blue-700 px-6 py-2.5 font-bold text-white disabled:bg-neutral-600"
+            className="mt-auto grid h-fit rounded bg-blue-700 px-6 py-2.5 font-bold text-white disabled:bg-neutral-600 md:w-fit"
           >
             Mercado Pago
           </button>
@@ -95,7 +95,7 @@ export default function BookingForm(props: Readonly<Props>) {
             name="method"
             value="Transferencia"
             disabled={!isDateAvailable}
-            className="mt-auto grid h-fit w-fit rounded bg-neutral-950 px-6 py-2.5 font-bold text-white disabled:bg-neutral-600"
+            className="mt-auto grid h-fit rounded bg-neutral-950 px-6 py-2.5 font-bold text-white disabled:bg-neutral-600 md:w-fit"
           >
             Transferencia
           </button>

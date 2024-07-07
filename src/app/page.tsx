@@ -1,17 +1,27 @@
-import BookingForm from "~/components/booking-form";
-import { getAllBookings } from "~/server/queries";
+import Footer from "~/components/footer";
+import Header from "~/components/header";
+import BookingSection from "~/components/section/booking-section";
+import ClientsSection from "~/components/section/clients-section";
+import FAQSection from "~/components/section/faq-section";
+import HeroSection from "~/components/section/hero-section";
+import ServicesSection from "~/components/section/services-section";
 
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const bookings = await getAllBookings();
+  // const bookings = await getNextBookings();
 
   return (
-    <main className="mx-auto grid max-w-screen-lg gap-8 p-8">
-      <h1 className="text-center text-5xl font-bold tracking-tighter">
-        butterfly-nails
-      </h1>
-      <BookingForm bookings={bookings} />
-    </main>
+    <>
+      <Header />
+      <HeroSection />
+      <main>
+        <ServicesSection />
+        <BookingSection />
+        <ClientsSection />
+        <FAQSection />
+      </main>
+      <Footer />
+    </>
   );
 }
