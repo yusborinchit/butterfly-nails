@@ -1,3 +1,102 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-calendar {
+  @apply overflow-hidden rounded-lg border border-neutral-500 bg-white p-4 text-lg text-neutral-900;
+}
+
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  @apply box-border;
+}
+
+.react-calendar button:enabled:hover {
+  @apply cursor-pointer;
+}
+
+.react-calendar__navigation {
+  @apply flex h-11;
+}
+
+.react-calendar__navigation button {
+  @apply min-w-11 rounded bg-none;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  @apply bg-neutral-200;
+}
+
+.react-calendar__month-view__weekdays {
+  @apply text-center text-xs font-black capitalize sm:text-sm md:text-base;
+}
+
+abbr:where([title]) {
+  @apply no-underline;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  @apply p-[0.5em];
+}
+
+.react-calendar__tile {
+  @apply max-w-full rounded px-2 py-[10px] text-center text-xs sm:text-sm md:text-base;
+}
+
+.red-tiles {
+  @apply text-red-500;
+}
+
+.react-calendar__tile:disabled {
+  @apply opacity-50;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  @apply opacity-50;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  @apply bg-neutral-200;
+}
+
+.react-calendar__tile--now {
+  @apply font-bold;
+}
+
+.react-calendar__tile--active {
+  @apply rounded bg-blue-700 text-white;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  @apply rounded bg-blue-700 text-white;
+}
+
+.red-tiles.react-calendar__tile--active {
+  @apply rounded bg-red-500 text-white;
+}
+
+.red-tiles.react-calendar__tile--active:enabled:hover,
+.red-tiles.react-calendar__tile--active:enabled:focus {
+  @apply rounded bg-red-500 text-white;
+}
+
+.react-calendar__navigation__arrow {
+  @apply grid place-items-center font-mono text-xl leading-[1];
+}
+
+.react-calendar__navigation__arrow:disabled {
+  @apply opacity-0;
+}
+
+.react-calendar__navigation__prev2-button {
+  @apply hidden;
+}
+
+.react-calendar__navigation__next2-button {
+  @apply hidden;
+}

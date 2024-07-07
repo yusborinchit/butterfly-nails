@@ -4,6 +4,7 @@ interface Props {
   label: string;
   name: string;
   placeholder: string;
+  type?: "text" | "password";
 }
 
 export default function TextInput(props: Readonly<Props>) {
@@ -16,8 +17,9 @@ export default function TextInput(props: Readonly<Props>) {
       </label>
       <input
         id={id}
+        required
         name={props.name}
-        type="text"
+        type={props.type ?? "text"}
         placeholder={props.placeholder}
         className="rounded border-neutral-500 placeholder:text-neutral-500"
       />

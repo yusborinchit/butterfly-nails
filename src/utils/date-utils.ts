@@ -1,9 +1,12 @@
-export function createCurrentDate() {
-  const date = new Date();
-  date.setHours(0, 0, 0, 0);
-  return date;
+export function parseStringToDate(string: string) {
+  const [day, month, year] = string.split("-");
+  return `${year}/${month}/${day}`;
 }
 
-export function parseDate(date: Date) {
-  return date.getUTCDate().toLocaleString("es-UY");
+export function parseDateToString(date: Date) {
+  return date.toLocaleDateString("es-UY", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
 }

@@ -1,7 +1,8 @@
 import "~/styles/globals.css";
 
-import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import { Inter } from "next/font/google";
+import { type PropsWithChildren } from "react";
 
 export const metadata: Metadata = {
   title: "Butterfly Nails",
@@ -9,13 +10,11 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-interface Props {
-  children: React.ReactNode;
-}
+const font = Inter({ subsets: ["latin"] });
 
-export default function RootLayout({ children }: Readonly<Props>) {
+export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
-    <html lang="es" className={`${GeistSans.variable}`}>
+    <html lang="es" className={font.className}>
       <body className="text-neutral-950">{children}</body>
     </html>
   );

@@ -1,9 +1,10 @@
 export interface Booking {
   id: number;
-  date: Date;
+  date: string;
   time: string;
+  ci: string;
+  name: string;
   service: string;
   state: string;
-  name: string;
-  ci: string;
+  method: string;
 }
