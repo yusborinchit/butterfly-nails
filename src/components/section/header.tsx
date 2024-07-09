@@ -6,7 +6,7 @@ export default function Header() {
       as="header"
       className="sticky left-0 top-0 z-30 flex items-center bg-white py-3"
     >
-      <img src="/logo.png" alt="" className="h-11 w-11 rounded-full" />
+      <img src="/bn-logo.png" alt="" className="h-11 w-11 rounded-full" />
       <nav className="ml-auto hidden items-center sm:flex">
         {["Inicio", "Servicios", "Agenda", "Clientas", "FAQ", "Contacto"].map(
           (link, idx) => (
