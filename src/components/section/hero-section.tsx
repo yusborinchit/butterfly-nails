@@ -2,10 +2,7 @@ import MainLayout from "../layouts/main-layout";
 
 export default function HeroSection() {
   return (
-    <MainLayout
-      id="inicio"
-      className="mt-20 grid items-center gap-16 md:grid-cols-2"
-    >
+    <MainLayout className="mt-32 grid items-center gap-16 sm:mt-20 md:grid-cols-2">
       <div className="flex flex-col gap-4">
         <h1 className="text-center text-[4.75rem] font-bold leading-[0.9] -tracking-[0.075em] md:text-start">
           Butterfly Nails
