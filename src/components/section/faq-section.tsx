@@ -12,9 +12,8 @@ export default function FAQSection() {
         Preguntas Frecuentes
       </h2>
       <p className="max-w-lg text-center text-neutral-500">
-        Encuentra respuestas a las dudas más comunes sobre nuestros servicios de
-        uñas. Si tienes alguna otra pregunta, no dudes en contactarme. ¡Estoy
-        aquí para ayudarte!
+        Encuentra respuestas a las dudas más comunes sobre mis servicios de
+        uñas. Si tienes más preguntas, contáctame.
       </p>
       <div className="mx-auto mt-2 flex max-w-screen-md flex-col gap-4">
         <QuestionCard
