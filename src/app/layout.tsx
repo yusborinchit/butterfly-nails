@@ -14,7 +14,10 @@ const font = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
-    <html lang="es" className={font.className}>
+    <html
+      lang="es"
+      className={`scroll-pt-[82px] scroll-smooth ${font.className}`}
+    >
       <body className="text-neutral-950">{children}</body>
     </html>
   );

@@ -1,11 +1,11 @@
 import { type Metadata } from "next";
 import { type PropsWithChildren } from "react";
-import ProtectedWrapper from "~/components/protected-wrapper";
+import ProtectedLayout from "~/components/layouts/protected-layout";
 
 export const metadata: Metadata = {
   title: "Butterfly Nails | Admin",
 };
 
 export default function AdminLayout({ children }: Readonly<PropsWithChildren>) {
-  return <ProtectedWrapper>{children}</ProtectedWrapper>;
+  return <ProtectedLayout>{children}</ProtectedLayout>;
 }

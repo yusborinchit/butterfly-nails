@@ -1,14 +1,20 @@
+import MainLayout from "../layouts/main-layout";
+
 export default function ClientsSection() {
   return (
-    <section className="mx-auto mt-44 flex max-w-screen-lg flex-col gap-4 px-4">
+    <MainLayout
+      id="clientas"
+      as="section"
+      className="mt-44 flex flex-col gap-4"
+    >
       <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-8">
         <div className="flex flex-col gap-4">
           <h2 className="text-center text-5xl font-bold -tracking-[0.075em] sm:text-start">
             Algunas Clientas
           </h2>
           <p className="mx-auto max-w-lg text-center text-neutral-500 sm:mx-0 sm:text-start">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Blanditiis, ducimus vero. Esse amet.
+            Explora la galería y descubre clientas felices con uñas
+            perfectamente diseñadas y cuidadas.
           </p>
         </div>
         <a
@@ -23,12 +29,12 @@ export default function ClientsSection() {
         {[1, 2, 3, 4, 5, 6].map((idx) => (
           <img
             key={idx}
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
+            className="aspect-square h-auto max-w-full rounded-lg object-cover"
+            src={`/clienta-${idx}.jpg`}
             alt=""
           />
         ))}
       </div>
-    </section>
+    </MainLayout>
   );
 }

@@ -2,7 +2,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { type PropsWithChildren } from "react";
 
-export default function ProtectedWrapper({
+export default function ProtectedLayout({
   children,
 }: Readonly<PropsWithChildren>) {
   const username = cookies().get("username")?.value;

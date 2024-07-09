@@ -1,8 +1,9 @@
-import { type PropsWithChildren, useId } from "react";
+import { useId } from "react";
 
-interface Props extends PropsWithChildren {
+interface Props {
   label: string;
   name: string;
+  options: string[];
 }
 
 export default function SelectInput(props: Readonly<Props>) {
@@ -14,7 +15,11 @@ export default function SelectInput(props: Readonly<Props>) {
         {props.label}
       </label>
       <select id={id} name={props.name} className="rounded border-neutral-500">
-        {props.children}
+        {props.options.map((option) => (
+          <option key={option} value={option} className="p-2">
+            {option}
+          </option>
+        ))}
       </select>
     </div>
   );

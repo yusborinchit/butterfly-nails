@@ -1,4 +1,4 @@
-import TextInput from "~/components/text-input";
+import TextInput from "~/components/forms/text-input";
 import { login } from "~/server/actions";
 
 export default function LoginPage() {

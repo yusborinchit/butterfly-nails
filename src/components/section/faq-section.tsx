@@ -1,39 +1,36 @@
-import ArrowIcon from "../icons/arrow-icon";
+import QuestionCard from "../cards/question-card";
+import MainLayout from "../layouts/main-layout";
 
 export default function FAQSection() {
   return (
-    <section className="mx-auto mt-44 flex max-w-screen-lg flex-col items-center gap-4 px-4">
+    <MainLayout
+      id="faq"
+      as="section"
+      className="mt-44 flex flex-col items-center gap-4"
+    >
       <h2 className="text-center text-5xl font-bold -tracking-[0.075em]">
         Preguntas Frecuentes
       </h2>
       <p className="max-w-lg text-center text-neutral-500">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
-        ducimus vero. Esse amet.
+        Encuentra respuestas a las dudas más comunes sobre nuestros servicios de
+        uñas. Si tienes alguna otra pregunta, no dudes en contactarme. ¡Estoy
+        aquí para ayudarte!
       </p>
       <div className="mx-auto mt-2 flex max-w-screen-md flex-col gap-4">
-        {[1, 2, 3, 4].map((idx) => (
-          <details
-            key={idx}
-            {...(idx % 2 !== 0 && { open: true })}
-            className="group rounded-lg bg-neutral-200 px-8 py-6 [&_summary::-webkit-details-marker]:hidden"
-          >
-            <summary className="flex cursor-pointer items-center justify-between gap-2">
-              <h2 className="text-2xl font-semibold tracking-tighter">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit?
-              </h2>
-              <span className="relative size-6 shrink-0">
-                <ArrowIcon className="size-6 shrink-0 transition duration-300 group-open:-rotate-180" />
-              </span>
-            </summary>
-            <p className="mt-2 text-neutral-500">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Laudantium, cupiditate officiis deleniti illum est at, voluptatum
-              totam dolorum, accusantium quasi quisquam possimus? Ducimus
-              facilis molestias autem! Alias repellendus illum asperiores!
-            </p>
-          </details>
-        ))}
+        <QuestionCard
+          question="¿Las Soft Gel tienen mantenimiento?"
+          answer="Como tal no, cada 21 días hay que retirarlas por completo y colocarlas nuevas."
+        />
+        <QuestionCard
+          question="¿Por qué debo concurrir cada 21 días?"
+          answer="Cuando empieza a crecer la uña el esmaltado o el tip puede levemente levantarse y puede que si filtra humedad cause una infección por Pseudomonas (Tipo de bacteria) o infecciones Fúngicas (Onicomicosis, un hongo), que si vienen cada 21 días se pueden detectar a tiempo y NO se realizan servicios arriba de una uña con hongos, bacterias o rotas."
+          isOpen={true}
+        />
+        <QuestionCard
+          question="¿Realizas Acrílicas?"
+          answer="No, no hago esculpidas en acrílico."
+        />
       </div>
-    </section>
+    </MainLayout>
   );
 }

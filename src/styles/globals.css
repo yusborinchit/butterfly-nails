@@ -21,6 +21,10 @@
   @apply flex h-11;
 }
 
+.react-calendar__navigation__label__labelText {
+  @apply capitalize;
+}
+
 .react-calendar__navigation button {
   @apply min-w-11 rounded bg-none;
 }
