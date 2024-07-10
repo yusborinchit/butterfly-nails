@@ -14,7 +14,7 @@ export default function SelectInput(props: Readonly<Props>) {
       <label htmlFor={id} className="text-sm font-bold">
         {props.label}
       </label>
-      <select id={id} name={props.name} className="rounded border-neutral-500">
+      <select id={id} name={props.name} className="rounded border-neutral-400">
         {props.options.map((option) => (
           <option key={option} value={option} className="p-2">
             {option}

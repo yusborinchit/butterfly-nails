@@ -21,7 +21,7 @@ export default function TextInput(props: Readonly<Props>) {
         name={props.name}
         type={props.type ?? "text"}
         placeholder={props.placeholder}
-        className="rounded border-neutral-500 placeholder:text-neutral-500"
+        className="rounded border-neutral-400 placeholder:text-neutral-500"
       />
     </div>
   );

@@ -10,7 +10,7 @@ export function getDateTurns(date: Date, bookings: Booking[]) {
     (time) => !turnsTaken.includes(time),
   );
 
-  const isDateAvailable = turnsAvailable.length > 0;
+  const isDateAvailable = dayjs(date).day() !== 0 && turnsAvailable.length > 0;
 
   return { dateTurns: turnsAvailable, isDateAvailable };
 }
