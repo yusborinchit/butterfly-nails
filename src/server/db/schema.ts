@@ -18,7 +18,6 @@ export const booking = createTable(
     name: varchar("name", { length: 256 }).notNull(),
     service: varchar("service", { length: 64 }).notNull(),
     state: varchar("state", { length: 64 }).notNull(),
-    method: varchar("method", { length: 64 }).notNull(),
   },
   (example) => ({
     dateIndex: index("date_idx").on(example.date),

@@ -15,7 +15,7 @@ export default function FAQSection() {
         Encuentra respuestas a las dudas más comunes sobre mis servicios de
         uñas. Si tienes más preguntas, contáctame.
       </p>
-      <div className="mx-auto mt-2 flex max-w-screen-md flex-col gap-4">
+      <div className="mx-auto mt-2 flex w-full max-w-screen-md flex-col gap-4">
         <QuestionCard
           question="¿Las Soft Gel tienen mantenimiento?"
           answer="Como tal no, cada 21 días hay que retirarlas por completo y colocarlas nuevas."

@@ -10,7 +10,7 @@ export default function QuestionCard(props: Readonly<Props>) {
   return (
     <details
       {...(props.isOpen && { open: true })}
-      className="group rounded-lg bg-neutral-200 px-8 py-6 [&_summary::-webkit-details-marker]:hidden"
+      className="group flex-1 rounded-lg bg-neutral-200 px-8 py-6 [&_summary::-webkit-details-marker]:hidden"
     >
       <summary className="flex cursor-pointer items-center justify-between gap-2">
         <h2 className="text-2xl font-semibold tracking-tighter">

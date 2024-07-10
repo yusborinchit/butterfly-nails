@@ -10,18 +10,21 @@ interface Props {
 
 export default function BookingCalendar(props: Readonly<Props>) {
   return (
-    <Calendar
-      locale="es"
-      defaultValue={props.date}
-      onChange={(value) => props.setDate(value as Date)}
-      minDate={props.currentDate}
-      maxDate={props.maxDate}
-      minDetail="month"
-      maxDetail="month"
-      prevLabel="<"
-      nextLabel=">"
-      tileClassName={({ date }) => (date.getDay() === 0 ? "red-tiles" : "")}
-      className="react-calendar"
-    />
+    <div>
+      <label className="text-sm font-bold">Fecha:</label>
+      <Calendar
+        locale="es"
+        defaultValue={props.date}
+        onChange={(value) => props.setDate(value as Date)}
+        minDate={props.currentDate}
+        maxDate={props.maxDate}
+        minDetail="month"
+        maxDetail="month"
+        prevLabel="<"
+        nextLabel=">"
+        tileClassName={({ date }) => (date.getDay() === 0 ? "red-tiles" : "")}
+        className="react-calendar"
+      />
+    </div>
   );
 }

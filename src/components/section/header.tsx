@@ -32,7 +32,7 @@ export default function Header() {
         </button>
         <nav
           data-open={isOpen}
-          className="ml-auto hidden items-center data-[open=true]:absolute data-[open=true]:left-0 data-[open=true]:top-0 data-[open=true]:flex data-[open=true]:w-screen data-[open=false]:flex-row data-[open=true]:flex-col data-[open=true]:bg-white data-[open=true]:pb-4 data-[open=true]:pt-[72px] sm:flex sm:flex-row sm:data-[open=true]:relative sm:data-[open=true]:w-auto sm:data-[open=true]:flex-row sm:data-[open=true]:py-0"
+          className="ml-auto hidden items-center data-[open=true]:absolute data-[open=true]:left-0 data-[open=true]:top-[68px] data-[open=true]:flex data-[open=true]:w-screen data-[open=false]:flex-row data-[open=true]:flex-col data-[open=true]:bg-white data-[open=true]:pb-4 sm:flex sm:flex-row sm:data-[open=true]:relative sm:data-[open=true]:top-0 sm:data-[open=true]:w-auto sm:data-[open=true]:flex-row sm:data-[open=true]:py-0"
         >
           <NavLink href="#">Inicio</NavLink>
           <NavLink href="#servicios">Servicios</NavLink>

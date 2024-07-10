@@ -6,5 +6,4 @@ export interface Booking {
   name: string;
   service: string;
   state: string;
-  method: string;
 }

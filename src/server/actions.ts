@@ -11,7 +11,6 @@ export async function schedule(formData: FormData) {
     ci: formData.get("ci") as string,
     name: formData.get("name") as string,
     service: formData.get("service") as string,
-    method: formData.get("method") as string,
   };
 
   await insertBooking({
