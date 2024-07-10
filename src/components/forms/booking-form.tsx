@@ -1,6 +1,7 @@
 "use client";
 
 import dayjs from "dayjs";
+import { useMemo } from "react";
 import { useCalendar } from "~/hooks/use-calendar";
 import { schedule } from "~/server/actions";
 import { type Booking } from "~/types";
@@ -9,6 +10,7 @@ import BookingCalendar from "./booking-calendar";
 import SelectInput from "./select-input";
 import SubmitButton from "./submit-button";
 import TextInput from "./text-input";
+import TextareaInput from "./textarea-input";
 
 interface Props {
   bookings: Booking[];
@@ -16,7 +18,10 @@ interface Props {
 
 export default function BookingForm(props: Readonly<Props>) {
   const { date, setDate, currentDate, maxDate } = useCalendar();
-  const { dateTurns, isDateAvailable } = getDateTurns(date, props.bookings);
+
+  const { dateTurns, isDateAvailable } = useMemo(() => {
+    return getDateTurns(date, props.bookings);
+  }, [props.bookings]);
 
   return (
     <form
@@ -64,6 +69,11 @@ export default function BookingForm(props: Readonly<Props>) {
           options={["Soft Gel", "Capping", "Esmaltado Semi"]}
         />
       </div>
+      <TextareaInput
+        label="Breve Descripción:"
+        name="description"
+        placeholder="Una breve descripción aquí..."
+      />
       <SubmitButton disabled={!isDateAvailable}>
         {isDateAvailable ? "Pagar Seña" : "No Disponible"}
       </SubmitButton>
