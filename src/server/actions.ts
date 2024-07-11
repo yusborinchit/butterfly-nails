@@ -2,22 +2,16 @@
 
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { type Booking } from "~/types";
 import { insertBooking } from "./queries";
 
 export async function schedule(formData: FormData) {
-  const rawFormData = {
-    date: formData.get("date") as string,
-    time: formData.get("time") as string,
-    ci: formData.get("ci") as string,
-    name: formData.get("name") as string,
-    service: formData.get("service") as string,
-  };
-
-  await insertBooking({
-    ...rawFormData,
+  const rawData = {
+    ...Object.fromEntries(formData),
     state: "Aprobado",
-  });
+  } as Omit<Booking, "id">;
 
+  await insertBooking(rawData);
   redirect("/");
 }
 

@@ -1,11 +1,10 @@
 "use client";
 
 import dayjs from "dayjs";
-import { useMemo } from "react";
+import { useRef } from "react";
 import { useCalendar } from "~/hooks/use-calendar";
 import { schedule } from "~/server/actions";
 import { type Booking } from "~/types";
-import { getDateTurns } from "~/utils/get-date-turns";
 import BookingCalendar from "./booking-calendar";
 import SelectInput from "./select-input";
 import SubmitButton from "./submit-button";
@@ -17,15 +16,28 @@ interface Props {
 }
 
 export default function BookingForm(props: Readonly<Props>) {
-  const { date, setDate, currentDate, maxDate } = useCalendar();
+  const formRef = useRef<HTMLFormElement | null>(null);
 
-  const { dateTurns, isDateAvailable } = useMemo(() => {
-    return getDateTurns(date, props.bookings);
-  }, [props.bookings]);
+  const {
+    date,
+    handleDateChange,
+    currentDate,
+    maxDate,
+    dateTurns,
+    isDateAvailable,
+  } = useCalendar(props.bookings);
+
+  async function handleAction(formData: FormData) {
+    if (formRef.current) {
+      await schedule(formData);
+      formRef.current.reset();
+    }
+  }
 
   return (
     <form
-      action={schedule}
+      ref={formRef}
+      action={handleAction}
       className="mx-auto flex max-w-screen-sm flex-col gap-4"
     >
       <input
@@ -52,10 +64,11 @@ export default function BookingForm(props: Readonly<Props>) {
         />
       </div>
       <BookingCalendar
+        bookings={props.bookings}
         date={date}
         currentDate={currentDate}
         maxDate={maxDate}
-        setDate={setDate}
+        handleDateChange={handleDateChange}
       />
       <div className="grid gap-4 sm:grid-cols-2">
         <SelectInput

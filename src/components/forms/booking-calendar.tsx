@@ -1,28 +1,43 @@
-import { type Dispatch, type SetStateAction } from "react";
-import Calendar from "react-calendar";
+import dayjs from "dayjs";
+import { useMemo } from "react";
+import Calendar, { type TileArgs } from "react-calendar";
+import { type Booking, type ChangeDateValue } from "~/types";
+import { getFullDates } from "~/utils/get-full-dates";
 
 interface Props {
+  bookings: Booking[];
   date: Date;
+  handleDateChange: (value: ChangeDateValue) => void;
   currentDate: Date;
   maxDate: Date;
-  setDate: Dispatch<SetStateAction<Date>>;
 }
 
 export default function BookingCalendar(props: Readonly<Props>) {
+  const fullDates = useMemo(() => {
+    return getFullDates(props.bookings);
+  }, [props.bookings]);
+
+  function handleTileClassName({ date }: TileArgs) {
+    return dayjs(date).day() === 0 ||
+      fullDates.includes(dayjs(date).format("YYYY-MM-DD"))
+      ? "red-tiles"
+      : "";
+  }
+
   return (
     <div>
       <label className="text-sm font-bold">Fecha:</label>
       <Calendar
         locale="es"
         defaultValue={props.date}
-        onChange={(value) => props.setDate(value as Date)}
+        onChange={props.handleDateChange}
         minDate={props.currentDate}
         maxDate={props.maxDate}
         minDetail="month"
         maxDetail="month"
         prevLabel="<"
         nextLabel=">"
-        tileClassName={({ date }) => (date.getDay() === 0 ? "red-tiles" : "")}
+        tileClassName={handleTileClassName}
         className="react-calendar"
       />
     </div>

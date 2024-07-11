@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import MenuIcon from "../icons/menu-icon";
 import MainLayout from "../layouts/main-layout";
@@ -18,8 +19,10 @@ export default function Header() {
         as="header"
         className="sticky left-0 top-0 z-30 flex items-center bg-white py-3"
       >
-        <img
+        <Image
           src="/bn-logo.png"
+          width={44}
+          height={44}
           alt=""
           className="z-30 h-11 w-11 rounded-full"
         />
@@ -39,7 +42,6 @@ export default function Header() {
           <NavLink href="#agenda">Agenda</NavLink>
           <NavLink href="#clientas">Clientas</NavLink>
           <NavLink href="#faq">FAQ</NavLink>
-          <NavLink href="#contacto">Contacto</NavLink>
         </nav>
       </MainLayout>
     </>
