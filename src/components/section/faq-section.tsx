@@ -8,9 +8,11 @@ export default function FAQSection() {
       as="section"
       className="mt-44 flex flex-col items-center gap-4"
     >
-      <h2 className="text-center text-5xl font-bold -tracking-[0.075em]">
-        Preguntas Frecuentes
-      </h2>
+      <header className="flex flex-col items-center gap-4 sm:flex-row">
+        <h2 className="text-center text-5xl font-bold -tracking-[0.075em]">
+          Preguntas Frecuentes
+        </h2>
+      </header>
       <p className="max-w-lg text-center text-neutral-500">
         Encuentra respuestas a las dudas más comunes sobre mis servicios de
         uñas. Si tienes más preguntas, contáctame.

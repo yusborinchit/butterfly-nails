@@ -1,5 +1,6 @@
 import MainLayout from "~/components/layouts/main-layout";
-import BookingTable from "~/components/tables/booking-table";
+import CurrentBookingsTable from "~/components/tables/current-bookings-table";
+import NextBookingsTable from "~/components/tables/next-bookings-table";
 import { getCurrentBookings, getNextBookings } from "~/server/queries";
 
 export const dynamic = "force-dynamic";
@@ -25,16 +26,14 @@ export default async function AdminDashboard() {
     <main className="py-4">
       <MainLayout className="flex flex-col gap-24">
         <section className="flex flex-col gap-4">
-          <h2>Turnos del Día:</h2>
-          <BookingTable
+          <CurrentBookingsTable
             headers={TABLE_HEADER}
             bookings={currentBookings}
             emptyMessage="No hay turnos el día de hoy :("
           />
         </section>
         <section className="flex flex-col gap-4">
-          <h2>Turnos Próximos:</h2>
-          <BookingTable
+          <NextBookingsTable
             headers={TABLE_HEADER}
             bookings={nextBookings}
             emptyMessage="No hay turnos próximos :("

@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { and, eq, gt, lt } from "drizzle-orm";
+import { and, eq, gt } from "drizzle-orm";
 import { type Booking } from "~/types";
 import { db } from "./db";
 import { booking } from "./db/schema";
@@ -17,19 +17,6 @@ export async function getCurrentBookings() {
     .orderBy(booking.date, booking.time);
 }
 
-export async function getPreviousBookings() {
-  return db
-    .select()
-    .from(booking)
-    .where(
-      and(
-        lt(booking.date, dayjs(new Date()).format("YYYY-MM-DD")),
-        eq(booking.deleted, false),
-      ),
-    )
-    .orderBy(booking.date, booking.time);
-}
-
 export async function getNextBookings() {
   return db
     .select()
@@ -40,7 +27,8 @@ export async function getNextBookings() {
         eq(booking.deleted, false),
       ),
     )
-    .orderBy(booking.date, booking.time);
+    .orderBy(booking.date, booking.time)
+    .limit(270);
 }
 
 export async function deleteBooking(bookingId: number) {
