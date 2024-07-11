@@ -3,7 +3,7 @@
 import dayjs from "dayjs";
 import { useRef } from "react";
 import { useCalendar } from "~/hooks/use-calendar";
-import { schedule } from "~/server/actions";
+import { scheduleAction } from "~/server/actions";
 import { type Booking } from "~/types";
 import BookingCalendar from "./booking-calendar";
 import SelectInput from "./select-input";
@@ -27,9 +27,9 @@ export default function BookingForm(props: Readonly<Props>) {
     isDateAvailable,
   } = useCalendar(props.bookings);
 
-  async function handleAction(formData: FormData) {
+  async function handleSchedule(formData: FormData) {
     if (formRef.current) {
-      await schedule(formData);
+      await scheduleAction(formData);
       formRef.current.reset();
     }
   }
@@ -37,7 +37,7 @@ export default function BookingForm(props: Readonly<Props>) {
   return (
     <form
       ref={formRef}
-      action={handleAction}
+      action={handleSchedule}
       className="mx-auto flex max-w-screen-sm flex-col gap-4"
     >
       <input
@@ -54,7 +54,7 @@ export default function BookingForm(props: Readonly<Props>) {
         />
         <TextInput
           label="Usuario de Instagram:"
-          name="ig"
+          name="username"
           placeholder="Tu Usuario aquí..."
         />
         <TextInput
@@ -87,7 +87,7 @@ export default function BookingForm(props: Readonly<Props>) {
         name="description"
         placeholder="Una breve descripción aquí..."
       />
-      <SubmitButton disabled={!isDateAvailable}>
+      <SubmitButton className="mt-4" disabled={!isDateAvailable}>
         {isDateAvailable ? "Pagar Seña" : "No Disponible"}
       </SubmitButton>
     </form>

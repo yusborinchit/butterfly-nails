@@ -11,4 +11,5 @@ export interface Booking {
   service: string;
   description: string;
   state: string;
+  deleted: boolean;
 }

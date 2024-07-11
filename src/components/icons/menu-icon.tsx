@@ -4,11 +4,7 @@ interface Props {
 
 export default function MenuIcon({ className }: Readonly<Props>) {
   return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 512 512"
-    >
+    <svg className={className} viewBox="0 0 512 512">
       <path
         fill="none"
         stroke="currentColor"

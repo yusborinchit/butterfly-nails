@@ -17,7 +17,7 @@ export default function TextareaInput(props: Readonly<Props>) {
       <textarea
         id={id}
         required
-        maxLength={256}
+        maxLength={364}
         name={props.name}
         rows={5}
         placeholder={props.placeholder}

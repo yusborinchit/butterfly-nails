@@ -3,12 +3,26 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { type Booking } from "~/types";
-import { insertBooking } from "./queries";
+import { approveBooking, deleteBooking, insertBooking } from "./queries";
 
-export async function schedule(formData: FormData) {
+export async function deleteAction(formData: FormData) {
+  const bookingId = Number(formData.get("id") as string);
+
+  await deleteBooking(bookingId);
+  redirect("/admin");
+}
+
+export async function approveAction(formData: FormData) {
+  const bookingId = Number(formData.get("id") as string);
+
+  await approveBooking(bookingId);
+  redirect("/admin");
+}
+
+export async function scheduleAction(formData: FormData) {
   const rawData = {
     ...Object.fromEntries(formData),
-    state: "Aprobado",
+    state: "Pendiente",
   } as Omit<Booking, "id">;
 
   await insertBooking(rawData);
