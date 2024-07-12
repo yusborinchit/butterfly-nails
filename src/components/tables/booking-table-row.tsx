@@ -4,33 +4,33 @@ import OptionsIcon from "../icons/options-icon";
 
 interface Props {
   booking: Booking;
-  changeModalBooking: () => void;
-  toggleOpen: () => void;
+  openModal: () => void;
 }
 
 export default function BookingTableRow(props: Readonly<Props>) {
   const { booking } = props;
 
   function handleToggleModal() {
-    props.changeModalBooking();
-    props.toggleOpen();
+    props.openModal();
   }
 
   return (
-    <tr key={booking.id} className="odd:bg-neutral-100">
-      <td className="px-4 py-3.5 font-semibold">
+    <tr key={booking.id} className="odd:bg-white even:bg-neutral-200">
+      <td className="px-5 py-4 font-semibold">
         {dayjs(booking.date).format("DD/MM/YYYY")}
       </td>
-      <td className="px-4 py-3.5">{booking.time}</td>
-      <td className="px-4 py-3.5">{booking.ci}</td>
-      <td className="px-4 py-3.5">{booking.name}</td>
-      <td className="px-4 py-3.5">{booking.username}</td>
-      <td className="px-4 py-3.5">{booking.service}</td>
-      <td
-        data-state={booking.state}
-        className="px-4 py-3.5 text-center font-bold data-[state=Aprobado]:bg-green-200 data-[state=Pendiente]:bg-amber-100 data-[state=Aprobado]:text-green-600 data-[state=Pendiente]:text-amber-600"
-      >
-        {booking.state}
+      <td className="px-5 py-4">{booking.time}</td>
+      <td className="px-5 py-4">{booking.ci}</td>
+      <td className="px-5 py-4">{booking.name}</td>
+      <td className="px-5 py-4">{booking.username}</td>
+      <td className="px-5 py-4">{booking.service}</td>
+      <td className="px-5 py-4 text-center">
+        <span
+          data-state={booking.state}
+          className="rounded p-2 data-[state=Aprobado]:bg-green-600 data-[state=Pendiente]:bg-amber-500 data-[state=Aprobado]:text-white data-[state=Pendiente]:text-white"
+        >
+          {booking.state}
+        </span>
       </td>
       <td className="aspect-square p-2">
         <button onClick={handleToggleModal} className="mx-auto flex w-min">

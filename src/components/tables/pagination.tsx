@@ -6,23 +6,21 @@ interface Props {
 
 export default function Pagination(props: Readonly<Props>) {
   return (
-    <nav className="flex items-center -space-x-px sm:ml-auto">
+    <nav className="flex justify-center">
       <button
         onClick={props.prevPage}
-        className="flex items-center justify-center rounded-s p-2 leading-tight text-neutral-700"
+        className="flex items-center justify-end rounded-e p-2 font-bold leading-tight"
       >
-        <span>Anterior</span>
-        {/* <PrevIcon className="h-3 w-3" /> */}
+        Anterior
       </button>
-      <p className="flex items-center justify-center px-3 text-xl font-bold leading-tight text-neutral-700">
-        {props.page}
+      <p className="flex items-center justify-center px-3 leading-tight text-neutral-500">
+        {props.page + 1}
       </p>
       <button
         onClick={props.nextPage}
-        className="flex items-center justify-center gap-1 rounded-e p-2 leading-tight text-neutral-700"
+        className="flex items-center justify-start rounded-e p-2 font-bold leading-tight"
       >
-        <span>Siguiente</span>
-        {/* <NextIcon className="h-4 w-4" /> */}
+        Siguiente
       </button>
     </nav>
   );

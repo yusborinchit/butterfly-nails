@@ -1,20 +1,8 @@
 import MainLayout from "~/components/layouts/main-layout";
-import CurrentBookingsTable from "~/components/tables/current-bookings-table";
-import NextBookingsTable from "~/components/tables/next-bookings-table";
+import BookingTable from "~/components/tables/booking-table";
 import { getCurrentBookings, getNextBookings } from "~/server/queries";
 
 export const dynamic = "force-dynamic";
-
-const TABLE_HEADER = [
-  "Fecha",
-  "Turno",
-  "CI",
-  "Nombre",
-  "Usuario",
-  "Servicio",
-  "Estado",
-  "",
-];
 
 export default async function AdminDashboard() {
   const [currentBookings, nextBookings] = await Promise.all([
@@ -24,19 +12,23 @@ export default async function AdminDashboard() {
 
   return (
     <main className="py-4">
-      <MainLayout className="flex flex-col gap-24">
+      <MainLayout className="flex flex-col gap-16">
         <section className="flex flex-col gap-4">
-          <CurrentBookingsTable
-            headers={TABLE_HEADER}
+          <BookingTable
+            title="Próximos Turnos"
             bookings={currentBookings}
             emptyMessage="No hay turnos el día de hoy :("
+            hasSearch={false}
+            hasPagination={false}
           />
         </section>
         <section className="flex flex-col gap-4">
-          <NextBookingsTable
-            headers={TABLE_HEADER}
+          <BookingTable
+            title="Próximos Turnos"
             bookings={nextBookings}
             emptyMessage="No hay turnos próximos :("
+            hasSearch={true}
+            hasPagination={true}
           />
         </section>
         <section></section>
