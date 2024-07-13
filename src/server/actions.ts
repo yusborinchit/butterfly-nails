@@ -9,6 +9,7 @@ export async function deleteAction(formData: FormData) {
   const bookingId = Number(formData.get("id") as string);
 
   await deleteBooking(bookingId);
+
   redirect("/admin");
 }
 
@@ -16,6 +17,7 @@ export async function approveAction(formData: FormData) {
   const bookingId = Number(formData.get("id") as string);
 
   await approveBooking(bookingId);
+
   redirect("/admin");
 }
 
@@ -26,7 +28,11 @@ export async function scheduleAction(formData: FormData) {
   } as Omit<Booking, "id">;
 
   await insertBooking(rawData);
-  redirect("/");
+
+  const { date, time, service } = rawData;
+  const url = `/booking-info?date=${date}&time=${time}&service=${service}`;
+
+  redirect(url);
 }
 
 export async function login(formData: FormData) {

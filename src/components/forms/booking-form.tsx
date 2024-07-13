@@ -27,17 +27,10 @@ export default function BookingForm(props: Readonly<Props>) {
     isDateAvailable,
   } = useCalendar(props.bookings);
 
-  async function handleSchedule(formData: FormData) {
-    if (formRef.current) {
-      await scheduleAction(formData);
-      formRef.current.reset();
-    }
-  }
-
   return (
     <form
       ref={formRef}
-      action={handleSchedule}
+      action={scheduleAction}
       className="mx-auto flex max-w-screen-sm flex-col gap-4"
     >
       <input
@@ -88,7 +81,7 @@ export default function BookingForm(props: Readonly<Props>) {
         placeholder="Una breve descripción aquí..."
       />
       <SubmitButton className="mt-4" disabled={!isDateAvailable}>
-        {isDateAvailable ? "Pagar Seña" : "No Disponible"}
+        {isDateAvailable ? "Agendar" : "No Disponible"}
       </SubmitButton>
     </form>
   );

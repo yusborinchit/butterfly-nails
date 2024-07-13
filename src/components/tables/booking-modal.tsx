@@ -69,14 +69,14 @@ export default function Modal(props: Readonly<Props>) {
             {booking.state === "Pendiente" && (
               <form action={handleApprove}>
                 <input type="hidden" name="id" value={booking.id} />
-                <SubmitButton className="w-full bg-green-600 px-4 py-2.5 text-sm">
+                <SubmitButton className="w-full bg-green-600 px-4 py-2.5">
                   Aprobar
                 </SubmitButton>
               </form>
             )}
             <form action={handleDelete}>
               <input type="hidden" name="id" value={booking.id} />
-              <SubmitButton className="w-full bg-red-600 px-4 py-2.5 text-sm">
+              <SubmitButton className="w-full bg-red-600 px-4 py-2.5">
                 Cancelar
               </SubmitButton>
             </form>
