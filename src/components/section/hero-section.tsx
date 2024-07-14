@@ -20,11 +20,12 @@ export default function HeroSection() {
         </a>
       </div>
       <Image
+        priority
         src="/btfyl2.png"
         width={410}
         height={435}
         alt=""
-        className="ml-auto hidden max-w-[90%] md:inline-block"
+        className="ml-auto hidden h-auto max-w-[90%] md:inline-block"
       />
     </MainLayout>
   );

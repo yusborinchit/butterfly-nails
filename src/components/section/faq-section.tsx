@@ -31,6 +31,11 @@ export default function FAQSection() {
           question="¿Realizas Acrílicas?"
           answer="No, no hago esculpidas en acrílico."
         />
+        <QuestionCard
+          question="¿Por qué debo concurrir cada 21 días?"
+          answer="Cuando empieza a crecer la uña el esmaltado o el tip puede levemente levantarse y puede que si filtra humedad cause una infección por Pseudomonas (Tipo de bacteria) o infecciones Fúngicas (Onicomicosis, un hongo), que si vienen cada 21 días se pueden detectar a tiempo y NO se realizan servicios arriba de una uña con hongos, bacterias o rotas."
+          isOpen={true}
+        />
       </div>
     </MainLayout>
   );

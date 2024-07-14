@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface Props {
   src: string;
   alt: string;
@@ -14,10 +16,12 @@ export default function ServiceCard(props: Readonly<Props>) {
           {props.service}
         </h3>
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 via-35%"></div>
-        <img
+        <Image
           src={props.src}
+          width={310}
+          height={310}
           alt={props.alt}
-          className="aspect-square object-cover"
+          className="aspect-square h-full w-full object-cover"
         />
       </div>
       <div className="flex flex-col gap-4 rounded-b-lg bg-black p-4 pt-0">

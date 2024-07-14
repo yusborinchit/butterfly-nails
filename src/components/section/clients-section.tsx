@@ -1,3 +1,4 @@
+import Image from "next/image";
 import MainLayout from "../layouts/main-layout";
 
 export default function ClientsSection() {
@@ -27,12 +28,18 @@ export default function ClientsSection() {
       </div>
       <div className="mt-2 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
         {[1, 2, 3, 4, 5, 6].map((idx) => (
-          <img
+          <div
             key={idx}
-            className="aspect-square h-auto max-w-full rounded-lg object-cover"
-            src={`/clienta-${idx}.jpg`}
-            alt=""
-          />
+            className="relative aspect-square overflow-hidden rounded-lg"
+          >
+            <Image
+              src={`/clienta-${idx}.jpg`}
+              width={500}
+              height={500}
+              alt=""
+              className="absolute inset-0 aspect-square h-full w-full object-cover transition-transform hover:scale-125"
+            />
+          </div>
         ))}
       </div>
     </MainLayout>

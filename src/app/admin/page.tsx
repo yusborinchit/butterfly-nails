@@ -11,18 +11,18 @@ export default async function AdminDashboard() {
   ]);
 
   return (
-    <main className="py-4">
-      <MainLayout className="flex flex-col gap-16">
+    <>
+      <MainLayout as="main" className="py-4">
         <section className="flex flex-col gap-4">
           <BookingTable
-            title="Próximos Turnos"
+            title="Turnos del día"
             bookings={currentBookings}
             emptyMessage="No hay turnos el día de hoy :("
             hasSearch={false}
             hasPagination={false}
           />
         </section>
-        <section className="flex flex-col gap-4">
+        <section className="mt-16 flex flex-col gap-4">
           <BookingTable
             title="Próximos Turnos"
             bookings={nextBookings}
@@ -31,8 +31,7 @@ export default async function AdminDashboard() {
             hasPagination={true}
           />
         </section>
-        <section></section>
       </MainLayout>
-    </main>
+    </>
   );
 }

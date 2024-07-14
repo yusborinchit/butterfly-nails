@@ -41,10 +41,14 @@ export default function BookingInfoPage(props: Readonly<Props>) {
               Contactate conmigo y mándame el <strong>diseño por MD</strong>.
             </p>
             <div className="mt-6 flex flex-col gap-2 text-neutral-950">
-              <p className="flex items-center gap-2">
+              <a
+                href="https://www.instagram.com/butterfly_nailx/"
+                target="_blank"
+                className="flex items-center gap-2"
+              >
                 <InstagramIcon className="h-7 w-7 text-neutral-950" />
                 <span className="font-bold leading-[1]">@butterfly_nailx</span>
-              </p>
+              </a>
               <p className="flex items-center gap-2">
                 <PhoneIcon className="h-7 w-7 text-neutral-950" />
                 <span className="font-bold leading-[1]">098368615</span>

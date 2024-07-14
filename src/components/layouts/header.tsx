@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import MenuIcon from "../icons/menu-icon";
-import MainLayout from "../layouts/main-layout";
 import NavLink from "../nav-link";
+import MainLayout from "./main-layout";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,7 @@ export default function Header() {
       ></div>
       <MainLayout
         as="header"
-        className="sticky left-0 top-0 z-30 flex items-center bg-white py-3"
+        className="sticky left-0 top-0 z-30 flex h-[72px] items-center bg-white py-2"
       >
         <Image
           src="/bn-logo.png"
@@ -35,7 +35,7 @@ export default function Header() {
         </button>
         <nav
           data-open={isOpen}
-          className="ml-auto hidden items-center data-[open=true]:absolute data-[open=true]:left-0 data-[open=true]:top-[68px] data-[open=true]:flex data-[open=true]:w-screen data-[open=false]:flex-row data-[open=true]:flex-col data-[open=true]:bg-white data-[open=true]:pb-4 sm:flex sm:flex-row sm:data-[open=true]:relative sm:data-[open=true]:top-0 sm:data-[open=true]:w-auto sm:data-[open=true]:flex-row sm:data-[open=true]:py-0"
+          className="ml-auto hidden items-center data-[open=true]:absolute data-[open=true]:left-0 data-[open=true]:top-[72px] data-[open=true]:flex data-[open=true]:w-screen data-[open=false]:flex-row data-[open=true]:flex-col data-[open=true]:bg-white data-[open=true]:pb-4 sm:flex sm:flex-row sm:data-[open=true]:relative sm:data-[open=true]:top-0 sm:data-[open=true]:w-auto sm:data-[open=true]:flex-row sm:data-[open=true]:py-0"
         >
           <NavLink href="#">Inicio</NavLink>
           <NavLink href="#servicios">Servicios</NavLink>

@@ -1,4 +1,4 @@
-import MainLayout from "../layouts/main-layout";
+import MainLayout from "./main-layout";
 
 export default function Footer() {
   return (
