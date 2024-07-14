@@ -21,7 +21,7 @@ export default function BookingInfoPage(props: Readonly<Props>) {
   return (
     <div className="bg-neutral-200">
       <MainLayout className="grid min-h-screen place-items-center py-4">
-        <section className="grid overflow-hidden rounded-lg bg-white sm:grid-cols-2">
+        <section className="grid overflow-hidden rounded-lg bg-white sm:grid-cols-[3fr_2fr]">
           <div className="flex flex-col px-6 py-10">
             <div className="flex flex-col gap-1">
               <h3 className="text-4xl font-bold -tracking-[0.075em]">
@@ -71,7 +71,13 @@ export default function BookingInfoPage(props: Readonly<Props>) {
               </ul>
             </div>
           </div>
-          <div className="row-start-1 h-full min-h-[150px] w-full min-w-[300px] bg-neutral-400 sm:row-start-auto" />
+          <div className="relative hidden h-full w-full bg-neutral-400 sm:flex">
+            <img
+              src="/fideos.jpeg"
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover brightness-[.8]"
+            />
+          </div>
         </section>
       </MainLayout>
     </div>

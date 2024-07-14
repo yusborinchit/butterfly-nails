@@ -8,7 +8,7 @@ export default function HeroSection() {
         <h1 className="text-center text-[4.75rem] font-bold leading-[0.9] -tracking-[0.075em] md:text-start">
           Butterfly Nails
         </h1>
-        <p className="mx-auto max-w-[500px] text-center text-neutral-500 md:text-start">
+        <p className="mx-auto max-w-[500px] text-center text-neutral-500 md:mx-0 md:text-start">
           Embellece tus uñas con estilo y sofisticación. Tu satisfacción es
           nuestra inspiración.
         </p>

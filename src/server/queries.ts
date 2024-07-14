@@ -67,7 +67,7 @@ export async function getTotalServices() {
   return query.rows;
 }
 
-export async function getMonthServices() {
+export async function getMonthBookings() {
   const query = await db.execute(
     sql`SELECT EXTRACT(MONTH FROM date) AS month, COUNT(*) AS bookings FROM "butterfly-nails_booking" GROUP BY month ORDER BY month`,
   );

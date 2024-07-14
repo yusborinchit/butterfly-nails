@@ -13,7 +13,7 @@ export default function ClientsSection() {
           <h2 className="text-center text-5xl font-bold -tracking-[0.075em] sm:text-start">
             Algunas Clientas
           </h2>
-          <p className="mx-auto max-w-lg text-center text-neutral-500 sm:mx-0 sm:text-start">
+          <p className="mx-auto max-w-xl text-center text-neutral-500 sm:mx-0 sm:text-start">
             Explora la galería y descubre clientas felices con uñas
             perfectamente diseñadas y cuidadas.
           </p>
@@ -26,8 +26,8 @@ export default function ClientsSection() {
           ¿Queres ver más? Síguenos en nuestro Instagram.
         </a>
       </div>
-      <div className="mt-2 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        {[1, 2, 3, 4, 5, 6].map((idx) => (
+      <div className="mt-2 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((idx) => (
           <div
             key={idx}
             className="relative aspect-square overflow-hidden rounded-lg"

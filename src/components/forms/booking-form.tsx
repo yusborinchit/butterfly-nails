@@ -1,7 +1,7 @@
 "use client";
 
 import dayjs from "dayjs";
-import { useRef } from "react";
+import { type ChangeEvent, useRef, useState } from "react";
 import { useCalendar } from "~/hooks/use-calendar";
 import { scheduleAction } from "~/server/actions";
 import { type Booking } from "~/types";
@@ -15,8 +15,16 @@ interface Props {
   bookings: Booking[];
 }
 
+const PRICES: Record<string, string> = {
+  "Soft Gel": "A partir de 650$",
+  "Esmaltado Semi": "A partir de 400$",
+  Híbridas: "A partir de 800$",
+  Capping: "A partir de 450$",
+};
+
 export default function BookingForm(props: Readonly<Props>) {
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [service, setService] = useState("Soft Gel");
 
   const {
     date,
@@ -27,11 +35,17 @@ export default function BookingForm(props: Readonly<Props>) {
     isDateAvailable,
   } = useCalendar(props.bookings);
 
+  function handlePriceChange(event: ChangeEvent<HTMLFormElement>) {
+    const formData = new FormData(event.currentTarget);
+    setService((formData.get("service") as string) ?? "Soft Gel");
+  }
+
   return (
     <form
       ref={formRef}
       action={scheduleAction}
-      className="mx-auto flex max-w-screen-sm flex-col gap-4"
+      onChange={handlePriceChange}
+      className="flex flex-col gap-4"
     >
       <input
         type="hidden"
@@ -72,7 +86,7 @@ export default function BookingForm(props: Readonly<Props>) {
         <SelectInput
           label="Servicio:"
           name="service"
-          options={["Soft Gel", "Capping", "Esmaltado Semi"]}
+          options={["Soft Gel", "Capping", "Esmaltado Semi", "Híbridas"]}
         />
       </div>
       <TextareaInput
@@ -80,9 +94,11 @@ export default function BookingForm(props: Readonly<Props>) {
         name="description"
         placeholder="Una breve descripción aquí..."
       />
-      <SubmitButton className="mt-4" disabled={!isDateAvailable}>
-        {isDateAvailable ? "Agendar" : "No Disponible"}
-      </SubmitButton>
+      <div className="mt-4 flex flex-col gap-1">
+        <SubmitButton disabled={!isDateAvailable}>
+          {isDateAvailable ? `Agendar (${PRICES[service]})` : "No Disponible"}
+        </SubmitButton>
+      </div>
     </form>
   );
 }

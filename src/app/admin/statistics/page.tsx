@@ -2,15 +2,15 @@ import dayjs from "dayjs";
 import MainLayout from "~/components/layouts/main-layout";
 import {
   getFrequentClients,
-  getMonthServices,
+  getMonthBookings,
   getTotalServices,
 } from "~/server/queries";
 
 export default async function StatisticsPage() {
-  const [frequentClients, totalServices, monthServices] = await Promise.all([
+  const [frequentClients, totalServices, monthBookings] = await Promise.all([
     getFrequentClients(),
     getTotalServices(),
-    getMonthServices(),
+    getMonthBookings(),
   ]);
 
   return (
@@ -43,7 +43,7 @@ export default async function StatisticsPage() {
             <strong>Servicios x Mes:</strong>
             <br />
             {JSON.stringify(
-              monthServices.map((d) => ({
+              monthBookings.map((d) => ({
                 month: dayjs()
                   .month((d.month as number) - 1)
                   .format("MMMM"),
