@@ -25,16 +25,18 @@ export default function FAQSection() {
         <QuestionCard
           question="¿Por qué debo concurrir cada 21 días?"
           answer="Cuando empieza a crecer la uña el esmaltado o el tip puede levemente levantarse y puede que si filtra humedad cause una infección por Pseudomonas (Tipo de bacteria) o infecciones Fúngicas (Onicomicosis, un hongo), que si vienen cada 21 días se pueden detectar a tiempo y NO se realizan servicios arriba de una uña con hongos, bacterias o rotas."
-          isOpen={true}
         />
         <QuestionCard
           question="¿Realizas Acrílicas?"
           answer="No, no hago esculpidas en acrílico."
         />
         <QuestionCard
-          question="¿Por qué debo concurrir cada 21 días?"
-          answer="Cuando empieza a crecer la uña el esmaltado o el tip puede levemente levantarse y puede que si filtra humedad cause una infección por Pseudomonas (Tipo de bacteria) o infecciones Fúngicas (Onicomicosis, un hongo), que si vienen cada 21 días se pueden detectar a tiempo y NO se realizan servicios arriba de una uña con hongos, bacterias o rotas."
-          isOpen={true}
+          question="¿Qué debo hacer para que mis uñas lleguen a los 21 días intactas? "
+          answer="No, en el caso de humedad se limpiará la uña y cuando esté totalmente libre de humedad se realizará el servicio pero si ya se convirtió en un hongo, es recomendable ir a tratarlo con un médico y que le den el tratamiento correspondiente."
+        />
+        <QuestionCard
+          question="¿Puedo hacerme uñas con hongos?"
+          answer="Utiliza guantes y no expongas tus uñas a humedad en tiempo prolongado, no llevarse las uñas a la boca, evitar golpes (Utilizando teclados, tics, etc)."
         />
       </div>
     </MainLayout>

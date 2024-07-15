@@ -26,7 +26,7 @@ export default function ServicesSection() {
         src="/hibridas-retocada.jpg"
         alt=""
         service="Híbridas"
-        description="Una capa de gel para reforzar la uña natural. No extiende el largo de la uña pero ayuda a dejarlas crecer. Su colocación y esmaltado lleva 1 hora y media como mínimo, dependiendo del diseño y la condición de la uña."
+        description="Una extensión de soft gel + un recubrimiento de base Rubber, su beneficio principal es más resistencia, ayuda a que no hayan desprendimientos en la zona de cutícula a medida que crece la uña natural."
         price="A partir de 800$"
       />
       <ServiceCard
