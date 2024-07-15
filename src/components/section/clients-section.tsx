@@ -33,7 +33,7 @@ export default function ClientsSection() {
             className="relative aspect-square overflow-hidden rounded-lg"
           >
             <Image
-              src={`/clienta-${idx}.jpg`}
+              src={`/clientas/${idx}.webp`}
               width={500}
               height={500}
               alt="La foto de las uñas de una clienta."
