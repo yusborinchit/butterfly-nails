@@ -36,7 +36,7 @@ export default function ClientsSection() {
               src={`/clienta-${idx}.jpg`}
               width={500}
               height={500}
-              alt=""
+              alt="La foto de las uñas de una clienta."
               className="absolute inset-0 aspect-square h-full w-full object-cover transition-transform hover:scale-125"
             />
           </div>

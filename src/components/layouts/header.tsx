@@ -24,7 +24,7 @@ export default function Header() {
             src="/bn-logo.png"
             width={44}
             height={44}
-            alt=""
+            alt="El logo de Butterfly Nails."
             className="z-30 h-11 w-11 rounded-full"
           />
         </a>

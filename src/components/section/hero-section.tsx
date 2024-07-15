@@ -24,7 +24,7 @@ export default function HeroSection() {
         src="/btfyl2.png"
         width={410}
         height={435}
-        alt=""
+        alt="Las uñas de una clienta que sobresalen de un circulo."
         className="ml-auto hidden h-auto max-w-[90%] md:inline-block"
       />
     </MainLayout>
