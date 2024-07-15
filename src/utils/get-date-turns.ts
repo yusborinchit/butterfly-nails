@@ -6,7 +6,7 @@ export function getDateTurns(date: Date, bookings: Booking[]) {
     .filter((booking) => booking.date === dayjs(date).format("YYYY-MM-DD"))
     .map((booking) => booking.time);
 
-  const turnsAvailable = ["09:00", "12:00", "18:00"].filter(
+  const turnsAvailable = ["09:00", "13:00", "16:00"].filter(
     (time) => !turnsTaken.includes(time),
   );
 
