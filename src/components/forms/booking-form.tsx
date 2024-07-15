@@ -97,7 +97,7 @@ export default function BookingForm(props: Readonly<Props>) {
           />
         </div>
         <TextareaInput
-          label="Breve Descripción:"
+          label="Descripción del Diseño:"
           name="description"
           placeholder="Una breve descripción aquí..."
         />

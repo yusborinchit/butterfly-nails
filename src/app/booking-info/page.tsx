@@ -37,8 +37,9 @@ export default function BookingInfoPage(props: Readonly<Props>) {
                 Hay <strong>20 minutos</strong> de tolerancia de espera.
               </p>
             </div>
-            <p className="mt-6 text-neutral-600 [&>strong]:font-semibold">
-              Contactate conmigo y mándame el <strong>diseño por MD</strong>.
+            <p className="mt-6 max-w-[450px] text-neutral-600 [&>strong]:font-semibold">
+              Contactate conmigo y mándame el <strong>diseño por MD </strong>
+              para acordar el <strong>precio</strong>.
             </p>
             <div className="mt-6 flex flex-col gap-2 text-neutral-950">
               <a
@@ -58,7 +59,7 @@ export default function BookingInfoPage(props: Readonly<Props>) {
                 <span className="font-bold leading-[1]">Consultar por MD</span>
               </p>
             </div>
-            <p className="mt-6 text-neutral-600 [&>strong]:font-semibold">
+            <p className="mt-6 max-w-[450px] text-neutral-600 [&>strong]:font-semibold">
               El pago se puede realizar en <strong>efectivo</strong> o{" "}
               <strong>transferencia bancaria</strong>.
             </p>
