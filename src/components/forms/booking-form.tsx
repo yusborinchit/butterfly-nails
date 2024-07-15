@@ -53,13 +53,6 @@ export default function BookingForm(props: Readonly<Props>) {
           name="date"
           value={dayjs(date).format("YYYY-MM-DD")}
         />
-        <BookingCalendar
-          bookings={props.bookings}
-          date={date}
-          currentDate={currentDate}
-          maxDate={maxDate}
-          handleDateChange={handleDateChange}
-        />
         <div className="grid gap-4 sm:grid-cols-2">
           <SelectInput
             label="Turno:"
@@ -72,6 +65,13 @@ export default function BookingForm(props: Readonly<Props>) {
             options={["Soft Gel", "Capping", "Esmaltado Semi", "Híbridas"]}
           />
         </div>
+        <BookingCalendar
+          bookings={props.bookings}
+          date={date}
+          currentDate={currentDate}
+          maxDate={maxDate}
+          handleDateChange={handleDateChange}
+        />
       </div>
       <div className="flex flex-col gap-4">
         <div className="grid gap-4 sm:grid-cols-2">
