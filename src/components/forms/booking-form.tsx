@@ -45,57 +45,63 @@ export default function BookingForm(props: Readonly<Props>) {
       ref={formRef}
       action={scheduleAction}
       onChange={handlePriceChange}
-      className="flex flex-col gap-4"
+      className="grid gap-4 sm:grid-cols-2"
     >
-      <input
-        type="hidden"
-        name="date"
-        value={dayjs(date).format("YYYY-MM-DD")}
-      />
-      <div className="grid gap-4 sm:grid-cols-2">
-        <TextInput label="Cédula:" name="ci" placeholder="Tu Cédula aquí..." />
-        <TextInput
-          label="Nombre Completo:"
-          name="name"
-          placeholder="Tu Nombre aquí..."
+      <div className="flex flex-col gap-4">
+        <input
+          type="hidden"
+          name="date"
+          value={dayjs(date).format("YYYY-MM-DD")}
         />
-        <TextInput
-          label="Usuario de Instagram:"
-          name="username"
-          placeholder="Tu Usuario aquí..."
+        <BookingCalendar
+          bookings={props.bookings}
+          date={date}
+          currentDate={currentDate}
+          maxDate={maxDate}
+          handleDateChange={handleDateChange}
         />
-        <TextInput
-          label="Teléfono:"
-          name="phone"
-          placeholder="Tu número de Teléfono aquí..."
-        />
+        <div className="grid gap-4 sm:grid-cols-2">
+          <SelectInput
+            label="Turno:"
+            name="time"
+            options={isDateAvailable ? dateTurns : ["No Disponible"]}
+          />
+          <SelectInput
+            label="Servicio:"
+            name="service"
+            options={["Soft Gel", "Capping", "Esmaltado Semi", "Híbridas"]}
+          />
+        </div>
       </div>
-      <BookingCalendar
-        bookings={props.bookings}
-        date={date}
-        currentDate={currentDate}
-        maxDate={maxDate}
-        handleDateChange={handleDateChange}
-      />
-      <div className="grid gap-4 sm:grid-cols-2">
-        <SelectInput
-          label="Turno:"
-          name="time"
-          options={isDateAvailable ? dateTurns : ["No Disponible"]}
+      <div className="flex flex-col gap-4">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <TextInput
+            label="Cédula:"
+            name="ci"
+            placeholder="Tu Cédula aquí..."
+          />
+          <TextInput
+            label="Nombre Completo:"
+            name="name"
+            placeholder="Tu Nombre aquí..."
+          />
+          <TextInput
+            label="Usuario de Instagram:"
+            name="username"
+            placeholder="Tu Usuario aquí..."
+          />
+          <TextInput
+            label="Teléfono:"
+            name="phone"
+            placeholder="Tu número de Teléfono aquí..."
+          />
+        </div>
+        <TextareaInput
+          label="Breve Descripción:"
+          name="description"
+          placeholder="Una breve descripción aquí..."
         />
-        <SelectInput
-          label="Servicio:"
-          name="service"
-          options={["Soft Gel", "Capping", "Esmaltado Semi", "Híbridas"]}
-        />
-      </div>
-      <TextareaInput
-        label="Breve Descripción:"
-        name="description"
-        placeholder="Una breve descripción aquí..."
-      />
-      <div className="mt-4 flex flex-col gap-1">
-        <SubmitButton disabled={!isDateAvailable}>
+        <SubmitButton disabled={!isDateAvailable} className="mt-auto">
           {isDateAvailable ? `Agendar (${PRICES[service]})` : "No Disponible"}
         </SubmitButton>
       </div>

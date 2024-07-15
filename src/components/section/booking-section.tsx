@@ -19,7 +19,7 @@ export default async function BookingSection() {
         ¡Reserva tu cita conmigo! Selecciona el servicio que desees y elige la
         fecha y hora que más te convenga.
       </p>
-      <div className="mx-auto mt-2 max-w-screen-sm">
+      <div className="mt-2">
         <BookingForm bookings={bookings} />
       </div>
     </MainLayout>

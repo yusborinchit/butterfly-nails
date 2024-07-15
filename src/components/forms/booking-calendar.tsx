@@ -25,21 +25,18 @@ export default function BookingCalendar(props: Readonly<Props>) {
   }
 
   return (
-    <div>
-      <label className="text-sm font-bold">Fecha:</label>
-      <Calendar
-        locale="es"
-        defaultValue={props.date}
-        onChange={props.handleDateChange}
-        minDate={props.currentDate}
-        maxDate={props.maxDate}
-        minDetail="month"
-        maxDetail="month"
-        prevLabel="<"
-        nextLabel=">"
-        tileClassName={handleTileClassName}
-        className="react-calendar"
-      />
-    </div>
+    <Calendar
+      locale="es"
+      defaultValue={props.date}
+      onChange={props.handleDateChange}
+      minDate={props.currentDate}
+      maxDate={props.maxDate}
+      minDetail="month"
+      maxDetail="month"
+      prevLabel="<"
+      nextLabel=">"
+      tileClassName={handleTileClassName}
+      className="react-calendar"
+    />
   );
 }

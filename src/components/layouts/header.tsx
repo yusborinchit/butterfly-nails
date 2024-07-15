@@ -19,13 +19,15 @@ export default function Header() {
         as="header"
         className="sticky left-0 top-0 z-30 flex h-[72px] items-center bg-white py-2"
       >
-        <Image
-          src="/bn-logo.png"
-          width={44}
-          height={44}
-          alt=""
-          className="z-30 h-11 w-11 rounded-full"
-        />
+        <a href="#">
+          <Image
+            src="/bn-logo.png"
+            width={44}
+            height={44}
+            alt=""
+            className="z-30 h-11 w-11 rounded-full"
+          />
+        </a>
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
