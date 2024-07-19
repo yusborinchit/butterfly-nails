@@ -11,11 +11,11 @@ export default async function BookingSection() {
   const bookings = [...currentBookings, ...nextBookings];
 
   return (
-    <MainLayout id="agenda" as="section" className="mt-44 flex flex-col gap-4">
-      <h2 className="text-center text-5xl font-bold -tracking-[0.075em]">
-        Agenda
+    <MainLayout id="agenda" className="mt-32">
+      <h2 className="text-center text-5xl font-bold leading-[0.85] tracking-tighter">
+        Agenda Online.
       </h2>
-      <p className="mx-auto max-w-lg text-center text-neutral-500">
+      <p className="mx-auto mt-6 max-w-md text-lg">
         ¡Reserva tu cita conmigo! Selecciona el servicio que desees y elige la
         fecha y hora que más te convenga.
       </p>

@@ -4,24 +4,23 @@ interface Props {
   label: string;
   name: string;
   placeholder: string;
-  type?: "text" | "password";
 }
 
 export default function TextInput(props: Readonly<Props>) {
   const id = useId();
 
   return (
-    <div className="flex flex-col">
-      <label htmlFor={id} className="text-sm font-bold">
+    <div className="flex flex-col gap-1">
+      <label htmlFor={id} className="block font-semibold text-text">
+        <span className="text-accent"># </span>
         {props.label}
       </label>
       <input
         id={id}
-        required
+        type="text"
         name={props.name}
-        type={props.type ?? "text"}
         placeholder={props.placeholder}
-        className="rounded border-neutral-400 placeholder:text-neutral-500"
+        className="w-full rounded-md border-neutral-400 placeholder:text-text/75"
       />
     </div>
   );

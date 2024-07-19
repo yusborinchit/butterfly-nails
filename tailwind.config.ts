@@ -1,12 +1,18 @@
 import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
+      colors: {
+        text: "#1a0e11",
+        background: "#ece4de",
+        primary: "#8d5959",
+        secondary: "#e5cccc",
+        accent: "#88ad99",
+      },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        sans: ["Schibsted Grotesk"],
       },
     },
   },

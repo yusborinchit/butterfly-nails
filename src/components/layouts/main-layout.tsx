@@ -13,7 +13,7 @@ export default function MainLayout(props: Readonly<Props>) {
   return (
     <Component
       id={props.id}
-      className={twMerge("mx-auto max-w-[1090px] px-8", props.className)}
+      className={twMerge("mx-auto max-w-[1200px] px-8", props.className)}
     >
       {props.children}
     </Component>

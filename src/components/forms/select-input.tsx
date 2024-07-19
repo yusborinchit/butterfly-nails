@@ -10,13 +10,18 @@ export default function SelectInput(props: Readonly<Props>) {
   const id = useId();
 
   return (
-    <div className="flex flex-col">
-      <label htmlFor={id} className="text-sm font-bold">
+    <div className="flex flex-col gap-1">
+      <label htmlFor={id} className="block font-semibold text-text">
+        <span className="text-accent"># </span>
         {props.label}
       </label>
-      <select id={id} name={props.name} className="rounded border-neutral-400">
+      <select
+        id={id}
+        name={props.name}
+        className="w-full rounded-md border-neutral-400 placeholder:text-text/75"
+      >
         {props.options.map((option) => (
-          <option key={option} value={option} className="p-2">
+          <option key={option} value={option}>
             {option}
           </option>
         ))}

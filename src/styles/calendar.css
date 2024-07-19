@@ -47,7 +47,7 @@ abbr:where([title]) {
 }
 
 .red-tiles {
-  @apply text-red-600;
+  @apply text-red-700;
 }
 
 .react-calendar__tile:disabled {
@@ -68,21 +68,21 @@ abbr:where([title]) {
 }
 
 .react-calendar__tile--active {
-  @apply rounded bg-blue-700 text-white;
+  @apply rounded bg-accent text-white;
 }
 
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-  @apply rounded bg-blue-700 text-white;
+  @apply rounded bg-accent text-white;
 }
 
 .red-tiles.react-calendar__tile--active {
-  @apply rounded bg-red-600 text-white;
+  @apply rounded bg-primary text-white;
 }
 
 .red-tiles.react-calendar__tile--active:enabled:hover,
 .red-tiles.react-calendar__tile--active:enabled:focus {
-  @apply rounded bg-red-600 text-white;
+  @apply rounded bg-primary text-white;
 }
 
 .react-calendar__navigation__arrow {

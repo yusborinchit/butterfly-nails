@@ -10,8 +10,9 @@ export default function TextareaInput(props: Readonly<Props>) {
   const id = useId();
 
   return (
-    <div className="flex flex-col">
-      <label htmlFor={id} className="text-sm font-bold">
+    <div className="flex flex-col gap-1">
+      <label htmlFor={id} className="block font-semibold text-text">
+        <span className="text-accent"># </span>
         {props.label}
       </label>
       <textarea
@@ -19,9 +20,9 @@ export default function TextareaInput(props: Readonly<Props>) {
         required
         maxLength={364}
         name={props.name}
-        rows={5}
+        rows={6}
         placeholder={props.placeholder}
-        className="rounded border-neutral-400 placeholder:text-neutral-500"
+        className="w-full rounded-md border-neutral-400 placeholder:text-text/75"
       ></textarea>
     </div>
   );

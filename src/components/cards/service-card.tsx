@@ -1,34 +1,56 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface Props {
   src: string;
   alt: string;
-  service: string;
+  title: string;
   description: string;
   price: string;
 }
 
 export default function ServiceCard(props: Readonly<Props>) {
   return (
-    <article className="flex flex-col lg:odd:mb-12 lg:[&:nth-child(2)]:mb-0 lg:[&:nth-child(2)]:mt-12 lg:[&:nth-child(3)]:mb-0 lg:[&:nth-child(3)]:mt-12">
-      <div className="relative overflow-hidden rounded-t-lg">
-        <h3 className="absolute bottom-0 left-0 z-10 break-before-all p-4 text-3xl font-bold leading-[0.9] tracking-tighter text-white">
-          {props.service}
-        </h3>
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 via-35%"></div>
+    <motion.article
+      initial={{ opacity: 0, translateY: "4rem" }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: ".75" }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="group relative grid overflow-hidden rounded-xl lg:first:mb-12 lg:last:mb-12 lg:[&:nth-child(2)]:mb-0 lg:[&:nth-child(2)]:mt-12 lg:[&:nth-child(3)]:mb-0 lg:[&:nth-child(3)]:mt-12"
+    >
+      <div className="relative h-full w-full overflow-hidden rounded-t-xl before:absolute before:inset-0 before:h-full before:w-full before:bg-gradient-to-t before:from-white before:via-transparent">
         <Image
+          width={300}
+          height={320}
           src={props.src}
-          width={310}
-          height={310}
           alt={props.alt}
-          className="aspect-square h-full w-full object-cover"
+          className="-z-10 h-full min-h-[260px] w-full object-cover lg:min-h-[320px]"
         />
       </div>
-      <div className="flex flex-col gap-4 rounded-b-lg bg-black p-4 pt-0">
-        <p className="line-clamp-3 text-neutral-500">{props.description}</p>
-        <div className="h-px rounded-full bg-neutral-800"></div>
-        <p className="font-semibold text-white">{props.price}</p>
+      <div className="absolute inset-0 z-10 flex h-full w-full flex-col gap-4 bg-white p-8 opacity-0 transition-opacity group-hover:opacity-100">
+        <h3
+          aria-hidden
+          className="text-3xl font-semibold leading-[1] tracking-tighter underline decoration-accent decoration-[3px] underline-offset-[3px]"
+        >
+          {props.title}.
+        </h3>
+        <p className="text-base/6 opacity-75">{props.description}</p>
+        <p aria-hidden className="text mt-auto font-medium">
+          <span className="rounded bg-accent/30 px-3 py-1">Precio:</span>
+          <span className="ml-2">{props.price}.</span>
+        </p>
       </div>
-    </article>
+      <footer className="flex flex-col gap-4 bg-white p-8">
+        <h3 className="text-2xl font-semibold leading-[0.85] tracking-tighter">
+          {props.title}.
+        </h3>
+        <p className="text font-medium">
+          <span className="rounded bg-accent/30 px-3 py-1">Precio:</span>
+          <span className="ml-2">{props.price}.</span>
+        </p>
+      </footer>
+    </motion.article>
   );
 }

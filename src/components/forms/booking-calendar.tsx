@@ -36,7 +36,7 @@ export default function BookingCalendar(props: Readonly<Props>) {
       prevLabel="<"
       nextLabel=">"
       tileClassName={handleTileClassName}
-      className="react-calendar"
+      className="react-calendar col-span-full"
     />
   );
 }

@@ -45,26 +45,24 @@ export default function BookingForm(props: Readonly<Props>) {
       ref={formRef}
       action={scheduleAction}
       onChange={handlePriceChange}
-      className="grid gap-4 sm:grid-cols-2"
+      className="mt-8 grid gap-4 md:grid-cols-2"
     >
-      <div className="flex flex-col gap-4">
+      <div className="grid gap-4 md:grid-cols-2">
         <input
           type="hidden"
           name="date"
           value={dayjs(date).format("YYYY-MM-DD")}
         />
-        <div className="grid gap-4 sm:grid-cols-2">
-          <SelectInput
-            label="Turno:"
-            name="time"
-            options={isDateAvailable ? dateTurns : ["No Disponible"]}
-          />
-          <SelectInput
-            label="Servicio:"
-            name="service"
-            options={["Soft Gel", "Capping", "Esmaltado Semi", "Híbridas"]}
-          />
-        </div>
+        <SelectInput
+          label="Turno:"
+          name="time"
+          options={isDateAvailable ? dateTurns : ["No Disponible"]}
+        />
+        <SelectInput
+          label="Servicio:"
+          name="service"
+          options={["Soft Gel", "Capping", "Esmaltado Semi", "Híbridas"]}
+        />
         <BookingCalendar
           bookings={props.bookings}
           date={date}
@@ -74,30 +72,22 @@ export default function BookingForm(props: Readonly<Props>) {
         />
       </div>
       <div className="flex flex-col gap-4">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <TextInput
-            label="Cédula:"
-            name="ci"
-            placeholder="Tu Cédula aquí..."
-          />
-          <TextInput
-            label="Nombre Completo:"
-            name="name"
-            placeholder="Tu Nombre aquí..."
-          />
+        <div className="grid gap-4 md:grid-cols-2">
+          <TextInput label="Nombre:" name="name" placeholder="Fideos..." />
+          <TextInput label="Cédula:" name="ci" placeholder="12345678..." />
           <TextInput
             label="Usuario de Instagram:"
             name="username"
-            placeholder="Tu Usuario aquí..."
+            placeholder="butterfly_nailx..."
           />
           <TextInput
-            label="Teléfono:"
+            label="Número de Teléfono:"
             name="phone"
-            placeholder="Tu número de Teléfono aquí..."
+            placeholder="094567891..."
           />
         </div>
         <TextareaInput
-          label="Descripción del Diseño:"
+          label="Descripción:"
           name="description"
           placeholder="Una breve descripción aquí..."
         />

@@ -3,6 +3,7 @@ import Header from "~/components/layouts/header";
 import BookingSection from "~/components/section/booking-section";
 import ClientsSection from "~/components/section/clients-section";
 import FAQSection from "~/components/section/faq-section";
+import GuarantySection from "~/components/section/guaranty-section";
 import HeroSection from "~/components/section/hero-section";
 import ServicesSection from "~/components/section/services-section";
 
@@ -15,8 +16,9 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <ServicesSection />
-        <BookingSection />
         <ClientsSection />
+        <GuarantySection />
+        <BookingSection />
         <FAQSection />
       </main>
       <Footer />

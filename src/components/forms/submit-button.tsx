@@ -15,7 +15,7 @@ export default function SubmitButton(props: Readonly<Props>) {
       type="submit"
       disabled={pending || props.disabled}
       className={twMerge(
-        "grid h-fit rounded bg-neutral-950 px-6 py-3 font-bold text-white disabled:bg-neutral-600",
+        "bg-text inline-flex justify-center rounded-md px-6 py-4 text-base/5 font-bold text-white transition-transform hover:-translate-y-1 disabled:grayscale",
         props.className,
       )}
     >
