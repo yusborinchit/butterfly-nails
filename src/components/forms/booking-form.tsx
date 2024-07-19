@@ -2,9 +2,12 @@
 
 import dayjs from "dayjs";
 import { type ChangeEvent, useRef, useState } from "react";
+import { toast } from "sonner";
 import { useCalendar } from "~/hooks/use-calendar";
 import { scheduleAction } from "~/server/actions";
 import { type Booking } from "~/types";
+import { BookingFormSchema } from "~/zod-schemas";
+import ErrorToast from "../error-toast";
 import BookingCalendar from "./booking-calendar";
 import SelectInput from "./select-input";
 import SubmitButton from "./submit-button";
@@ -40,10 +43,25 @@ export default function BookingForm(props: Readonly<Props>) {
     setService((formData.get("service") as string) ?? "Soft Gel");
   }
 
+  async function handleSubmit(formData: FormData) {
+    const { success, error } = BookingFormSchema.safeParse(
+      Object.fromEntries(formData),
+    );
+
+    if (!success) {
+      const message = error.errors[0]?.message ?? "";
+      return toast.custom(() => <ErrorToast message={message} />, {
+        position: "top-center",
+      });
+    }
+
+    await scheduleAction(formData);
+  }
+
   return (
     <form
       ref={formRef}
-      action={scheduleAction}
+      action={handleSubmit}
       onChange={handlePriceChange}
       className="mt-8 grid gap-4 md:grid-cols-2"
     >

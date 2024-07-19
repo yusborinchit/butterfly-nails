@@ -17,12 +17,11 @@ export default function TextareaInput(props: Readonly<Props>) {
       </label>
       <textarea
         id={id}
-        required
         maxLength={364}
         name={props.name}
-        rows={6}
+        rows={5}
         placeholder={props.placeholder}
-        className="w-full rounded-md border-neutral-400 placeholder:text-text/75"
+        className="w-full flex-1 rounded-md border-neutral-400 placeholder:text-text/75"
       ></textarea>
     </div>
   );

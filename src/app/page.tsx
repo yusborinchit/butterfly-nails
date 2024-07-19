@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import Footer from "~/components/layouts/footer";
 import Header from "~/components/layouts/header";
 import BookingSection from "~/components/section/booking-section";
@@ -22,6 +23,7 @@ export default function HomePage() {
         <FAQSection />
       </main>
       <Footer />
+      <Toaster />
     </>
   );
 }

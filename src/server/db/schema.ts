@@ -14,12 +14,12 @@ export const booking = createTable(
   {
     id: serial("id").primaryKey(),
     date: date("date").notNull(),
-    time: varchar("time", { length: 5 }).notNull(), // 09:00 || 12:00 || 18:00
+    time: varchar("time", { length: 5 }).notNull(), // 09:00 || 13:00 || 16:00
     ci: varchar("ci", { length: 8 }).notNull(),
     name: varchar("name", { length: 256 }).notNull(),
     username: varchar("username", { length: 64 }).notNull(),
     phone: varchar("phone", { length: 9 }).notNull(),
-    service: varchar("service", { length: 64 }).notNull(), // Soft Gel || Capping || Esmaltado Semi
+    service: varchar("service", { length: 64 }).notNull(), // Soft Gel || Capping || Esmaltado Semi || Híbridas
     description: varchar("description", { length: 364 }).notNull(),
     state: varchar("state", { length: 64 }).notNull(), // Aprobado || Pendiente
     deleted: boolean("deleted").notNull().default(false),

@@ -2,14 +2,14 @@ interface Props {
   className: string;
 }
 
-export default function DownArrowIcon(props: Readonly<Props>) {
+export default function DownArrowIcon({ className }: Readonly<Props>) {
   return (
     <svg
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={2}
       stroke="currentColor"
-      className={props.className}
+      className={className}
     >
       <path
         strokeLinecap="round"

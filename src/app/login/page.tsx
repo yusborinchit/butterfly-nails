@@ -20,7 +20,6 @@ export default function LoginPage() {
           label="Contraseña"
           name="password"
           placeholder="Tu contraseña aquí..."
-          type="password"
         />
         <button
           type="submit"
