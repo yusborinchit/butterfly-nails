@@ -11,7 +11,7 @@ export default async function AdminDashboard() {
   ]);
 
   return (
-    <MainLayout as="main" className="py-4">
+    <MainLayout as="main" className="pb-40 pt-4">
       <section className="flex flex-col gap-4">
         <BookingTable
           title="Turnos del día"

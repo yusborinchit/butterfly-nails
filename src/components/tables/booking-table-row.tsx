@@ -22,7 +22,7 @@ export default function BookingTableRow(props: Readonly<Props>) {
       <td className="px-5 py-4">{booking.time}</td>
       <td className="px-5 py-4">{booking.ci}</td>
       <td className="px-5 py-4">{booking.name}</td>
-      <td className="px-5 py-4">@{booking.username}</td>
+      <td className="px-5 py-4">@{booking.username.replace("@", "")}</td>
       <td className="px-5 py-4">{booking.service}</td>
       <td className="px-5 py-4 text-center">
         <span
