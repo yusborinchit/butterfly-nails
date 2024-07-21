@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import { type ChangeEvent, useRef, useState } from "react";
 import { toast } from "sonner";
 import { useCalendar } from "~/hooks/use-calendar";
-import { scheduleAction } from "~/server/actions";
+import { sendEmailAction } from "~/server/actions";
 import { type Booking } from "~/types";
 import { BookingFormSchema } from "~/zod-schemas";
 import ErrorToast from "../error-toast";
@@ -55,7 +55,8 @@ export default function BookingForm(props: Readonly<Props>) {
       });
     }
 
-    await scheduleAction(formData);
+    // await scheduleAction(formData);
+    await sendEmailAction(formData);
   }
 
   return (

@@ -1,5 +1,5 @@
 import TextInput from "~/components/forms/text-input";
-import { login } from "~/server/actions";
+import { loginAction } from "~/server/actions";
 
 export default function LoginPage() {
   return (
@@ -8,7 +8,7 @@ export default function LoginPage() {
         Ingresar 🤓☝
       </h2>
       <form
-        action={login}
+        action={loginAction}
         className="mx-auto flex max-w-[360px] flex-col gap-4 px-4 py-8"
       >
         <TextInput
