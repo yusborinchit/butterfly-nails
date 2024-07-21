@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { approveAction } from "~/server/actions";
+import { approveAction, deleteAction } from "~/server/actions";
 import { type Booking } from "~/types";
 import SubmitButton from "../forms/submit-button";
 import CloseIcon from "../icons/close-icon";
@@ -19,7 +19,7 @@ export default function Modal(props: Readonly<Props>) {
   }
 
   async function handleDelete(formData: FormData) {
-    await delete formData;
+    await deleteAction(formData);
     props.toggleOpen();
   }
 
