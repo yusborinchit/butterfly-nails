@@ -32,7 +32,7 @@ export default function NotificationEmail(props: Readonly<Props>) {
             <Text className="mt-4">Hola {booking.name},</Text>
             <Text className="mt-4">
               El turno del {dayjs(booking.date).format("DD/MM/YYYY")} a las{" "}
-              {booking.time} hs de {booking.name} ha sido agendado con éxito.
+              {booking.time} hs de {booking.service} ha sido agendado con éxito.
             </Text>
             <Hr className="mx-0 w-full border border-solid border-[#eaeaea]" />
             <Text>
