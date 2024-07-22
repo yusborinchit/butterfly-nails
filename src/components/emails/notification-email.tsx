@@ -10,10 +10,11 @@ import {
   Text,
 } from "@react-email/components";
 import dayjs from "dayjs";
-import { type Booking } from "~/types";
+import { type z } from "zod";
+import { type BookingFormSchema } from "~/zod-schemas";
 
 interface Props {
-  booking: Omit<Booking, "id">;
+  booking: z.infer<typeof BookingFormSchema>;
 }
 
 export default function NotificationEmail(props: Readonly<Props>) {

@@ -6,7 +6,7 @@ interface Props {
   placeholder: string;
 }
 
-export default function TextareaInput(props: Readonly<Props>) {
+export default function EmailInput(props: Readonly<Props>) {
   const id = useId();
 
   return (
@@ -15,14 +15,13 @@ export default function TextareaInput(props: Readonly<Props>) {
         <span className="text-accent"># </span>
         {props.label}
       </label>
-      <textarea
+      <input
         id={id}
-        maxLength={364}
+        type="email"
         name={props.name}
-        rows={3}
         placeholder={props.placeholder}
-        className="w-full flex-1 rounded-md border-neutral-400 placeholder:text-text/75"
-      ></textarea>
+        className="w-full rounded-md border-neutral-400 placeholder:text-text/75"
+      />
     </div>
   );
 }

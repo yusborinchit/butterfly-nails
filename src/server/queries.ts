@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import { and, eq, gt, sql } from "drizzle-orm";
-import { type Booking } from "~/types";
+import { type z } from "zod";
+import { type BookingFormSchema } from "~/zod-schemas";
 import { db } from "./db";
 import { booking } from "./db/schema";
 
@@ -45,8 +46,12 @@ export async function approveBooking(bookingId: number) {
     .where(eq(booking.id, bookingId));
 }
 
-export async function insertBooking(bookingData: Omit<Booking, "id">) {
-  return db.insert(booking).values(bookingData);
+export async function insertBooking(
+  bookingData: z.infer<typeof BookingFormSchema>,
+) {
+  return db
+    .insert(booking)
+    .values({ ...bookingData, state: "Pendiente", deleted: false });
 }
 
 // 🤓☝ statistics queries

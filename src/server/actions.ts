@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { Resend } from "resend";
 import NotificationEmail from "~/components/emails/notification-email";
-import { type Booking } from "~/types";
+import { BookingFormSchema } from "~/zod-schemas";
 import { approveBooking, deleteBooking, insertBooking } from "./queries";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -30,18 +30,24 @@ export async function scheduleAction(formData: FormData) {
   const rawData = {
     ...Object.fromEntries(formData),
     state: "Pendiente",
-  } as Omit<Booking, "id">;
+  };
 
-  await insertBooking(rawData);
+  const { data, success } = BookingFormSchema.safeParse(rawData);
+  if (!success) return;
+
+  await insertBooking(data);
 
   await resend.emails.send({
     from: "Butterfly Nails <notificaciones@butterflynails.shop>",
-    to: ["butteflynails.notificaciones@gmail.com"],
-    subject: `Notificación del turno ${dayjs(rawData.date).format("DD/MM/YYYY")} a las ${rawData.time} hs de ${rawData.name}`,
-    react: NotificationEmail({ booking: rawData }),
+    to:
+      data.email !== ""
+        ? ["butteflynails.notificaciones@gmail.com", data.email]
+        : ["butteflynails.notificaciones@gmail.com"],
+    subject: `Notificación del turno ${dayjs(data.date).format("DD/MM/YYYY")} a las ${data.time} hs de ${data.name}`,
+    react: NotificationEmail({ booking: data }),
   });
 
-  const { date, time, service } = rawData;
+  const { date, time, service } = data;
   const url = `/booking-info?date=${date}&time=${time}&service=${service}`;
 
   redirect(url);

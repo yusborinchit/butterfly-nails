@@ -30,6 +30,7 @@ export const BookingFormSchema = z
     phone: z.string().regex(/^\d{9}$/, {
       message: "Teléfono inválido (9 caracteres de largo).",
     }),
+    email: z.string().email({ message: "Email inválido." }).or(z.literal("")),
     service: z.string().regex(/^(Soft Gel|Capping|Esmaltado Semi|Híbridas)$/, {
       message: "Servicio inválido.",
     }),

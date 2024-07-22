@@ -9,6 +9,7 @@ import { type Booking } from "~/types";
 import { BookingFormSchema } from "~/zod-schemas";
 import ErrorToast from "../error-toast";
 import BookingCalendar from "./booking-calendar";
+import EmailInput from "./email-input";
 import SelectInput from "./select-input";
 import SubmitButton from "./submit-button";
 import TextInput from "./text-input";
@@ -102,6 +103,13 @@ export default function BookingForm(props: Readonly<Props>) {
             label="Número de Teléfono:"
             name="phone"
             placeholder="094567891..."
+          />
+        </div>
+        <div className="col-span-2">
+          <EmailInput
+            label="Email (opcional):"
+            name="email"
+            placeholder="fideos123@gmail.com"
           />
         </div>
         <TextareaInput
