@@ -20,10 +20,10 @@ interface Props {
 }
 
 const PRICES: Record<string, string> = {
-  "Soft Gel": "A partir de 650$",
-  "Esmaltado Semi": "A partir de 400$",
-  Híbridas: "A partir de 800$",
-  Capping: "A partir de 450$",
+  "Soft Gel": "A partir de $650",
+  "Esmaltado Semi": "A partir de $400",
+  Híbridas: "A partir de $800",
+  Capping: "A partir de $450",
 };
 
 export default function BookingForm(props: Readonly<Props>) {

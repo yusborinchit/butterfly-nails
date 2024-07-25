@@ -15,7 +15,7 @@ export default async function BookingSection() {
       <h2 className="text-center text-5xl font-bold leading-[0.85] tracking-tighter">
         Agenda Online.
       </h2>
-      <p className="mx-auto mt-6 max-w-md text-lg">
+      <p className="mx-auto mt-6 max-w-md text-center text-lg">
         ¡Reserva tu cita conmigo! Selecciona el servicio que desees y elige la
         fecha y hora que más te convenga.
       </p>

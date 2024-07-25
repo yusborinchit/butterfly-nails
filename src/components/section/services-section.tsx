@@ -32,7 +32,7 @@ export default function ServicesSection() {
             alt="Unas uñas Híbridas."
             title="Híbridas"
             description="Una extensión de soft gel + un recubrimiento de base Rubber, su beneficio principal es más resistencia, ayuda a que no hayan desprendimientos en la zona de cutícula a medida que crece la uña natural."
-            price="Desde 800$"
+            price="Desde $800"
           />
           <ServiceCard
             src="/capping-retocada.jpg"
