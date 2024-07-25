@@ -3,7 +3,7 @@ import MainLayout from "../layouts/main-layout";
 
 export default function FAQSection() {
   return (
-    <section className="mt-32 bg-background pb-56 pt-24">
+    <section className="mt-32 overflow-hidden bg-background pb-56 pt-24">
       <MainLayout id="faq">
         <h2 className="text-center text-5xl font-bold leading-[0.85] tracking-tighter">
           Preguntas Frecuentes.
@@ -33,13 +33,13 @@ export default function FAQSection() {
           />
           <QuestionCard
             question="¿Qué debo hacer para que mis uñas lleguen a los 21 días intactas?"
-            answer="No, en el caso de humedad se limpiará la uña y cuando esté totalmente libre de humedad se realizará el servicio pero si ya se convirtió en un hongo, es recomendable ir a tratarlo con un médico y que le den el tratamiento correspondiente."
+            answer="Utiliza guantes y no expongas tus uñas a humedad en tiempo prolongado, no llevarse las uñas a la boca, evitar golpes (Utilizando teclados, tics, etc)."
             enterLeft={true}
             isOpen={true}
           />
           <QuestionCard
             question="¿Puedo hacerme uñas con hongos?"
-            answer="Utiliza guantes y no expongas tus uñas a humedad en tiempo prolongado, no llevarse las uñas a la boca, evitar golpes (Utilizando teclados, tics, etc)."
+            answer="No, en el caso de humedad se limpiará la uña y cuando esté totalmente libre de humedad se realizará el servicio pero si ya se convirtió en un hongo, es recomendable ir a tratarlo con un médico y que le den el tratamiento correspondiente."
             enterLeft={false}
             isOpen={false}
           />
