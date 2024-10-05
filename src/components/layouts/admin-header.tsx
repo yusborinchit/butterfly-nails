@@ -4,7 +4,7 @@ export default function AdminHeader() {
   return (
     <MainLayout
       as="header"
-      className="sticky left-0 top-0 z-10 flex h-[72px] items-center bg-white"
+      className="sticky left-0 top-0 z-20 flex h-[72px] items-center bg-white"
     >
       <a href="/" className="underline">
         &lt;- Volver al Inicio

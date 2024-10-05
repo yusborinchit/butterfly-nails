@@ -13,7 +13,7 @@ export default function Header() {
     <>
       <div
         data-open={isOpen}
-        className="pointer-events-none fixed inset-0 z-20 h-screen w-screen bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity data-[open=true]:opacity-100 sm:hidden"
+        className="pointer-events-none fixed inset-0 z-30 h-screen w-screen bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity data-[open=true]:opacity-100 sm:hidden"
       ></div>
       <div className="sticky left-0 top-0 z-30 bg-white">
         <MainLayout as="header" className="flex h-[72px] items-center py-2">
