@@ -7,7 +7,7 @@ export function getFullDates(bookings: Booking[]) {
   }, new Map<string, number>());
 
   const fullDates = Array.from(bookingMap.entries())
-    .filter(([_, times]) => times === 3)
+    .filter(([_, times]) => times === 4)
     .map(([date]) => date);
 
   return fullDates;

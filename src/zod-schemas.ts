@@ -5,7 +5,7 @@ export const BookingFormSchema = z
     date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, {
       message: "Fecha inválida.",
     }),
-    time: z.string().regex(/^(09:00|13:00|16:00)$/, {
+    time: z.string().regex(/^(09:00|13:00|16:00|18:00)$/, {
       message: "Turno inválido.",
     }),
     ci: z.string().length(8, {
