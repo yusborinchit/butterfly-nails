@@ -2,7 +2,6 @@ import dayjs from "dayjs";
 import InfoIcon from "~/components/icons/info-icon";
 import InstagramIcon from "~/components/icons/instagram-icon";
 import LocationIcon from "~/components/icons/location-icon";
-import PhoneIcon from "~/components/icons/phone-icon";
 import MainLayout from "~/components/layouts/main-layout";
 
 interface Props {
@@ -50,10 +49,6 @@ export default function BookingInfoPage(props: Readonly<Props>) {
                 <InstagramIcon className="h-7 w-7" />
                 <span className="font-bold leading-[1]">@butterfly_nailx</span>
               </a>
-              <p className="flex items-center gap-2">
-                <PhoneIcon className="h-7 w-7" />
-                <span className="font-bold leading-[1]">098368615</span>
-              </p>
               <p className="flex items-center gap-2">
                 <LocationIcon className="h-7 w-7" />
                 <span className="font-bold leading-[1]">Consultar por MD</span>
